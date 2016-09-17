@@ -1,4 +1,4 @@
-package com.petitchef.petitchef.API;
+package com.petitchef.petitchef.network;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Response;

@@ -6,10 +6,10 @@ import android.content.Context;
 /**
  * Created by girard_s on 11/05/2016 for PetitChef
  */
-public class ApplicationExt extends Application {
-    private static ApplicationExt instance;
+public class App extends Application {
+    private static App instance;
 
-    public static ApplicationExt getInstance() {
+    public static App getInstance() {
         return instance;
     }
 

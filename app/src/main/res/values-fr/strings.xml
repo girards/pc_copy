@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">PetitChef</string>
+    <string name="username">Nom de compte</string>
+    <string name="password">Mot de passe</string>
+    <string name="mail_adress">Adresse mail</string>
+    <string name="password_confirmation">Confirmation du mot de passe</string>
+    <string name="signup_confirm_button">Cuisinons !</string>
+    <string name="signup_switch_to_signin"><![CDATA[<b><font color=#FFFFFF>Vous avez déjà un compte ? Cliquez </b><b><font color=#4A90E2>ici</b>]]></string>
+    <string name="signin_switch_to_signup"><![CDATA[<b><font color=#FFFFFF>Vous n\'avez pas de compte ? Cliquez </b><b><font color=#4A90E2>ici</b>]]></string>
+    <string name="sign_in_facebook">Connexion avec Facebook</string>
+    <string name="sign_in_petitchef">Connexion</string>
+    <string name="sign_up_petitchef">Inscription</string>
+    <string name="error_field_empty">Veuillez compléter tout les champs avant de vous connecter.</string>
+</resources>

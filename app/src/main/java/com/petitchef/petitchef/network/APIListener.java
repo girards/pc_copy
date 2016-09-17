@@ -1,4 +1,4 @@
-package com.petitchef.petitchef.API;
+package com.petitchef.petitchef.network;
 
 /**
  * Created by girard_s on 11/05/2016 for PetitChef

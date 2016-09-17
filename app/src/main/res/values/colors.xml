@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#FFFCF2</color>
+    <color name="colorPrimaryDark">#33425B</color>
+    <color name="colorAccent">#33425B</color>
+    <color name="flagBlue">#00209F</color>
+    <color name="flagWhite">#FFFFFF</color>
+    <color name="flagRed">#F42A41</color>
 </resources>
