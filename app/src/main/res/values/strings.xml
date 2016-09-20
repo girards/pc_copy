@@ -11,4 +11,9 @@
     <string name="sign_up_petitchef">Sign Up</string>
     <string name="sign_in_petitchef">Sign In</string>
     <string name="error_field_empty">Please complete all fields before trying to sign in.</string>
+    <string name="stock_title_tab">Stock</string>
+    <string name="recipe_title_tab">Recipes</string>
+    <string name="scan_title_tab">Scan</string>
+    <string name="profile_title_tab">Profile</string>
+    <string name="list_title_tab">List</string>
 </resources>
