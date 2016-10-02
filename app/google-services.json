@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "1063950365328",
+    "project_id": "petitchef-temp-145110"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1063950365328:android:1723ea2ddd77fffa",
+        "android_client_info": {
+          "package_name": "com.petitchef.petitchef"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBj3gdfY_vF9RxGLyBCC5ZWbLZ3FJUZJiY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-85070628-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

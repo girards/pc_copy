@@ -2,25 +2,30 @@ package com.petitchef.petitchef;
 
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.design.widget.TabLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.analytics.Tracker;
 import com.petitchef.petitchef.views.adapters.MainFragmentPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
+    Tracker mTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        App application = App.getInstance();
+        mTracker=  application.getDefaultTracker();
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         MainFragmentPagerAdapter adapter = new MainFragmentPagerAdapter(getSupportFragmentManager(), MainActivity.this);
         viewPager.setAdapter(adapter);
+
 
         // Give the TabLayout the ViewPager
         TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
