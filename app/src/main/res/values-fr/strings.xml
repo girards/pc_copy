@@ -16,4 +16,5 @@
     <string name="scan_title_tab">Scan</string>
     <string name="profile_title_tab">Profil</string>
     <string name="list_title_tab">Liste</string>
+    <string name="error_password_or_username">Nom d\'utilisateur ou mot de passe incorrect.</string>
 </resources>

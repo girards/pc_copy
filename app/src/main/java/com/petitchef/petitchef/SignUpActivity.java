@@ -1,6 +1,7 @@
 package com.petitchef.petitchef;
 
 import android.animation.Animator;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -30,7 +31,6 @@ public class SignUpActivity extends AppCompatActivity {
     EditText mailSignUp;
     EditText passwordSignUp;
 
-    Button buttonSignUp;
     Button buttonSignIn;
     Button buttonFacebook;
     Button buttonConfirmSignIn;
@@ -42,11 +42,14 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.layout_login_signup);
         sliderView = findViewById(R.id.slider_layout);
 
-        buttonSignUp = (Button) findViewById(R.id.button_sign_up);
         buttonSignIn = (Button) findViewById(R.id.button_sign_in);
+        buttonSignIn.setTransformationMethod(null);
         buttonFacebook = (Button) findViewById(R.id.button_facebook_sign_in);
+        buttonFacebook.setTransformationMethod(null);
         buttonConfirmSignIn = (Button) findViewById(R.id.button_confirm_sign_in);
+        buttonConfirmSignIn.setTransformationMethod(null);
         buttonConfirmSignUp = (Button) findViewById(R.id.button_confirm_sign_up);
+        buttonConfirmSignUp.setTransformationMethod(null);
 
         switchToSignIn = (TextView) findViewById(R.id.switch_to_login_text);
         switchToSignIn.setText(Html.fromHtml(getString(R.string.signup_switch_to_signin)));
@@ -75,46 +78,6 @@ public class SignUpActivity extends AppCompatActivity {
         mailSignUp = (EditText) findViewById(R.id.mail_address_sign_up);
         passwordSignUp = (EditText) findViewById(R.id.password_sign_up);
 
-        buttonSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Resources resources = SignUpActivity.this.getResources();
-                DisplayMetrics displayMetrics = resources.getDisplayMetrics();
-                sliderView.animate()
-                        .translationY(-0.8f * displayMetrics.heightPixels / 2)
-                        .setDuration(600)
-                        .setListener(new Animator.AnimatorListener() {
-                            @Override
-                            public void onAnimationStart(Animator animation) {
-                                findViewById(R.id.sign_up_form).setVisibility(View.VISIBLE);
-                                findViewById(R.id.sign_in_form).setVisibility(View.INVISIBLE);
-                                buttonSignIn.animate().alpha(0.0f)
-                                        .setDuration(300);
-                                buttonSignIn.setEnabled(false);
-                                buttonSignUp.animate().alpha(0.0f)
-                                        .setDuration(300);
-                                buttonSignUp.setEnabled(false);
-                                buttonFacebook.animate().alpha(0.0f)
-                                        .setDuration(300);
-                                buttonFacebook.setEnabled(false);
-                            }
-
-                            @Override
-                            public void onAnimationEnd(Animator animation) {
-                            }
-
-                            @Override
-                            public void onAnimationCancel(Animator animation) {
-
-                            }
-
-                            @Override
-                            public void onAnimationRepeat(Animator animation) {
-
-                            }
-                        });
-            }
-        });
 
         buttonSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,9 +95,6 @@ public class SignUpActivity extends AppCompatActivity {
                                 buttonSignIn.animate().alpha(0.0f)
                                         .setDuration(300);
                                 buttonSignIn.setEnabled(false);
-                                buttonSignUp.animate().alpha(0.0f)
-                                        .setDuration(300);
-                                buttonSignUp.setEnabled(false);
                                 buttonFacebook.animate().alpha(0.0f)
                                         .setDuration(300);
                                 buttonFacebook.setEnabled(false);
@@ -166,8 +126,17 @@ public class SignUpActivity extends AppCompatActivity {
                 String password = passwordSignIn.getText().toString();
                 APIManager.getInstance().login(username, password, new APIListener<Boolean>() {
                     @Override
-                    public void onResult(Boolean object) {
-                        Log.d(TAG, "Result  = " + object);
+                    public void onResult(Boolean hasSignUpSucceeded) {
+                        if (hasSignUpSucceeded) {
+                            Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+                            startActivity(intent);
+                        }
+                        else {
+                            Toast.makeText(SignUpActivity.this,
+                                    getResources().getString(R.string.error_password_or_username),
+                                    Toast.LENGTH_LONG)
+                                    .show();
+                        }
                     }
                 });
             }
@@ -183,8 +152,17 @@ public class SignUpActivity extends AppCompatActivity {
                 String mail = mailSignUp.getText().toString();
                 APIManager.getInstance().register(username, password, mail, new APIListener<Boolean>() {
                     @Override
-                    public void onResult(Boolean object) {
-                        Log.d(TAG, "Result  = " + object);
+                    public void onResult(Boolean hasSignUpSucceeded) {
+                        if (hasSignUpSucceeded) {
+                            Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+                            startActivity(intent);
+                        }
+                        else {
+                            Toast.makeText(SignUpActivity.this,
+                                    getResources().getString(R.string.error_password_or_username),
+                                    Toast.LENGTH_LONG)
+                                    .show();
+                        }
                     }
                 });
             }
@@ -212,9 +190,6 @@ public class SignUpActivity extends AppCompatActivity {
                         buttonSignIn.animate().alpha(1.0f)
                                 .setDuration(300);
                         buttonSignIn.setEnabled(true);
-                        buttonSignUp.animate().alpha(1.0f)
-                                .setDuration(300);
-                        buttonSignUp.setEnabled(true);
                         buttonFacebook.animate().alpha(1.0f)
                                 .setDuration(300);
                         buttonFacebook.setEnabled(true);

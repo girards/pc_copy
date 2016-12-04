@@ -1,6 +1,7 @@
 package com.petitchef.petitchef.network;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -9,6 +10,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 import com.petitchef.petitchef.App;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -18,8 +20,9 @@ import java.util.Map;
  * Created by girard_s on 11/05/2016 for PetitChef
  */
 public class APIManager {
+    private static final String TAG = "APIManager";
     private static APIManager instance = null;
-    private String baseUrl = "http://api.petitchef.me/";
+    private String baseUrl = "http://petitchef.me:9090/";
     private RequestQueue requestQueue;
     private static Context context;
 
@@ -60,21 +63,32 @@ public class APIManager {
     }
 
     public void register(String username, String password, String mail, final APIListener<Boolean> handler) {
-        String finalRequest = baseUrl + "user/register";
+        String finalRequest = baseUrl + "/users";
 
         Map<String,String> params = new HashMap<String, String>();
         params.put("username", username);
         params.put("password", password);
         params.put("email", mail);
+        params.put("isAdmin", "false");
+        params.put("sendWelcomeMail", "false");
 
         mJsonObjectRequest jsObjRequest = new mJsonObjectRequest(Request.Method.POST, finalRequest, new JSONObject(params), new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                handler.onResult(true);
+                Log.d(TAG, "Proof of passing");
+                try {
+                    if (response.getString("message").equals("Successfully created"))
+                        handler.onResult(true);
+                    else
+                        handler.onResult(false);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                Log.d(TAG, error.getMessage());
                 handler.onResult(false);
             }
         });
