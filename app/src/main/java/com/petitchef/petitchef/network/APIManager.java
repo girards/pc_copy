@@ -39,7 +39,7 @@ public class APIManager {
     }
 
     public void login(String username, String password, final APIListener<Boolean> handler) {
-        String finalRequest = baseUrl + "user/login/" + username + "/" + password;
+        String finalRequest = baseUrl + "login" + username + "/" + password;
 
         mJsonObjectRequest jsObjRequest = new mJsonObjectRequest(Request.Method.GET, finalRequest, null, new Response.Listener<JSONObject>() {
             @Override
@@ -70,7 +70,7 @@ public class APIManager {
         params.put("password", password);
         params.put("email", mail);
         params.put("isAdmin", "false");
-        params.put("sendWelcomeMail", "false");
+        params.put("sendWelcomeMail", "true");
 
         mJsonObjectRequest jsObjRequest = new mJsonObjectRequest(Request.Method.POST, finalRequest, new JSONObject(params), new Response.Listener<JSONObject>() {
             @Override
