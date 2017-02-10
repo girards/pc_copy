@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.petitchef.petitchef.R;
 import com.petitchef.petitchef.objects.StockItem;
@@ -48,7 +49,11 @@ public class StockListViewAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         View rowView = mInflater.inflate(R.layout.stock_element_view, viewGroup, false);
 
-        Picasso.with(mContext).load(getItem(i).getPictureUrl()).into((ImageView) view.findViewById(R.id.stock_elem_img));
+
+        StockItem item = getItem(i);
+        Picasso.with(mContext).load(item.getPictureUrl()).into((ImageView) rowView.findViewById(R.id.stock_elem_img));
+        ((TextView) rowView.findViewById(R.id.stock_item_title)).setText(item.getTitle());
+        ((TextView) rowView.findViewById(R.id.stock_item_quantity)).setText(item.getQuantity());
         
         return rowView;
     }

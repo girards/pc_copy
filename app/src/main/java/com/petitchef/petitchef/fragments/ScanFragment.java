@@ -70,7 +70,7 @@ public class ScanFragment extends Fragment {
     private boolean isCameraPermissionGranted() {
         Log.d(TAG, String.valueOf(ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA) + " Value = " + PackageManager.PERMISSION_GRANTED));
         if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-            Log.d(TAG, " Passing in IF isCameraPerssionGranted");
+            Log.d(TAG, "Passing in IF isCameraPerssionGranted");
             ActivityCompat.requestPermissions(getActivity(),
                     new String[]{Manifest.permission.CAMERA},
                     Constants.MY_PERMISSIONS_REQUEST_CAMERA);

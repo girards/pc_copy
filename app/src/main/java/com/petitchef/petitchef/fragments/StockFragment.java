@@ -35,9 +35,29 @@ public class StockFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_stock, container, false);
-        final ArrayList<StockItem> stocks = new ArrayList<>();
-
         mTracker = App.getInstance().getDefaultTracker();
+
+
+        final ArrayList<StockItem> stocks = new ArrayList<>();
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
 
 
         StockListViewAdapter adapter = new StockListViewAdapter(this.getContext(), stocks);

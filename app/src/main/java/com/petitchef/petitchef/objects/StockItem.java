@@ -9,6 +9,12 @@ public class StockItem {
     private String title;
     private String quantity;
 
+    public StockItem(String url, String title, String quantity) {
+        this.pictureUrl = url;
+        this.title = title;
+        this.quantity = quantity;
+    }
+
     public String getPictureUrl(){
         return pictureUrl;
     }

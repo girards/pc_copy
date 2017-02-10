@@ -2,10 +2,12 @@ package com.petitchef.petitchef;
 
 import android.app.Application;
 import android.content.Context;
+import android.graphics.Typeface;
 
 import com.onesignal.OneSignal;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
+import com.petitchef.petitchef.utils.Constants;
 
 /**
  * Created by girard_s on 11/05/2016 for PetitChef
@@ -26,6 +28,8 @@ public class App extends Application {
     public void onCreate() {
         instance = this;
         super.onCreate();
+        Constants.mainFont = Typeface.createFromAsset(getContext().getAssets(), "AvenirNextCondensed-Regular.ttf");
+
         //Fabric.with(this, new Crashlytics());
         OneSignal.startInit(this).init();
     }
