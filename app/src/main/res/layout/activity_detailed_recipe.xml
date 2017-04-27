@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="180dp">
+
+        <ImageView
+            android:id="@+id/recipe_detailed_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"/>
+
+        <com.petitchef.petitchef.views.customviews.CustomTextView
+            android:id="@+id/recipe_detailed_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/flagWhite"
+            android:background="@color/darkTransparentLayer"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/gradient_primary_accent"/>
+
+    </RelativeLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:orientation="vertical"
+        android:background="@color/colorAccent">
+
+        <com.petitchef.petitchef.views.customviews.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/title_description"
+            android:textSize="20sp"
+            android:textColor="@color/flagWhite"/>
+
+        <com.petitchef.petitchef.views.customviews.CustomTextView
+            android:id="@+id/recipe_detailed_description"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/flagWhite"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:textAlignment="center"
+            android:text="@string/lorme_ipsum"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-30dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recipe_detailed_steps"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:src="@drawable/fork_and_knife"
+            android:layout_centerHorizontal="true"
+            android:scaleY="-1"
+            />
+
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>

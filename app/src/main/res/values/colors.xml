@@ -6,4 +6,5 @@
     <color name="flagBlue">#00209F</color>
     <color name="flagWhite">#FFFFFF</color>
     <color name="flagRed">#F42A41</color>
+    <color name="darkTransparentLayer">#80000000</color>
 </resources>

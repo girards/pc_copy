@@ -1,18 +1,22 @@
 package com.petitchef.petitchef.fragments;
 
-import android.support.v4.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 import com.petitchef.petitchef.App;
+import com.petitchef.petitchef.DetailedRecipeActivity;
 import com.petitchef.petitchef.R;
 import com.petitchef.petitchef.objects.Recipe;
+import com.petitchef.petitchef.objects.Step;
 import com.petitchef.petitchef.views.adapters.RecipeListViewAdapter;
 
 import java.util.ArrayList;
@@ -39,26 +43,29 @@ public class RecipeFragment extends Fragment {
         mTracker = App.getInstance().getDefaultTracker();
 
         final ArrayList<Recipe> recipes = new ArrayList<>();
+        final ArrayList<Step> steps = new ArrayList<>();
 
-        recipes.add(new Recipe("https://i.imgur.com/T9MSBoz.jpg", "FOOOD"));
-        recipes.add(new Recipe("http://newtopwallpapers.com/wp-content/uploads/2013/04/HD-Rainbow-Picture-On-Beach.jpg", "FOOOD"));
-        recipes.add(new Recipe("https://i.reddituploads.com/641b730db3a042d38593b418511fea87?fit=max&h=1536&w=1536&s=f06cd85a1eae33edb4fa2fa5c40f8ce9", "FOOOD"));
-        recipes.add(new Recipe("http://newtopwallpapers.com/wp-content/uploads/2013/04/HD-Rainbow-Picture-On-Beach.jpg", "FOOOD"));
-        recipes.add(new Recipe("http://newtopwallpapers.com/wp-content/uploads/2013/04/HD-Rainbow-Picture-On-Beach.jpg", "FOOOD"));
-        recipes.add(new Recipe("https://i.reddituploads.com/641b730db3a042d38593b418511fea87?fit=max&h=1536&w=1536&s=f06cd85a1eae33edb4fa2fa5c40f8ce9", "FOOOD"));
-        recipes.add(new Recipe("https://i.reddituploads.com/641b730db3a042d38593b418511fea87?fit=max&h=1536&w=1536&s=f06cd85a1eae33edb4fa2fa5c40f8ce9", "FOOOD"));
-        recipes.add(new Recipe("https://i.reddituploads.com/641b730db3a042d38593b418511fea87?fit=max&h=1536&w=1536&s=f06cd85a1eae33edb4fa2fa5c40f8ce9", "FOOOD"));
+        steps.add(new Step("https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg", "Commande Ta nouriture"));
+        steps.add(new Step("http://cdn-img.health.com/sites/default/files/migration/images/slides/junk-food-400x400.jpg", "mange La nouriture"));
+        steps.add(new Step("http://i.huffpost.com/gen/1445348/images/n-DIGESTION-PAIN-628x314.jpg", "Ta mal Mamene"));
 
-
-
-
-
+        recipes.add(new Recipe("http://static.cuisineaz.com/680x357/i72081-bruschettas-tomates-olives-et-parmesan.jpg", "Bruschetta", getResources().getString(R.string.lorme_ipsum), steps));
+        recipes.add(new Recipe("http://jimmytscatering.com/wp-content/uploads/2013/04/garlic-shrimp.jpg", "Crevettes aux noix", getResources().getString(R.string.lorme_ipsum), steps));
+        recipes.add(new Recipe("http://regimea.com/wp-content/uploads/2014/10/les-lasagnes-font-elles-grossir-702x336.jpg", "Lasagnes", getResources().getString(R.string.lorme_ipsum), steps));
 
         RecipeListViewAdapter adapter = new RecipeListViewAdapter(this.getContext(), recipes);
         recipeListView = (ListView) view.findViewById(R.id.recipe_list_view);
         recipeListView.setDividerHeight(0);
         recipeListView.setDivider(null);
         recipeListView.setAdapter(adapter);
+        recipeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getActivity(), DetailedRecipeActivity.class);
+                intent.putExtra("recipe", recipes.get(position));
+                startActivity(intent);
+            }
+        });
         return view;
     }
 

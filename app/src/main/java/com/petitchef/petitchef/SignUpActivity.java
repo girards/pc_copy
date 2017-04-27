@@ -1,14 +1,15 @@
 package com.petitchef.petitchef;
 
 import android.animation.Animator;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,6 +41,15 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_login_signup);
+
+        //Testing if user already logged in
+        SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+        if (sharedPref.contains(this.getString(R.string.token_shared_string))) {
+            Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
         sliderView = findViewById(R.id.slider_layout);
 
         buttonSignIn = (Button) findViewById(R.id.button_sign_in);
@@ -130,6 +140,7 @@ public class SignUpActivity extends AppCompatActivity {
                         if (hasSignUpSucceeded) {
                             Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
                             startActivity(intent);
+                            finish();
                         }
                         else {
                             Toast.makeText(SignUpActivity.this,

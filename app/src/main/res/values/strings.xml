@@ -17,4 +17,7 @@
     <string name="profile_title_tab">Profile</string>
     <string name="list_title_tab">List</string>
     <string name="error_password_or_username">Wrong password or username.</string>
+    <string name="token_shared_string">apitoken</string>
+    <string name="lorme_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec interdum urna. Sed pharetra nunc vel commodo sagittis. Phasellus molestie ac urna in facilisis. Etiam id dolor at leo volutpat dictum et in urna. Proin lobortis neque quis risus varius gravida</string>
+    <string name="title_description">Description</string>
 </resources>

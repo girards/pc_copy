@@ -1,14 +1,9 @@
 package com.petitchef.petitchef.views.adapters;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BlurMaskFilter;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
-import android.widget.RelativeLayout.LayoutParams;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
@@ -16,11 +11,8 @@ import com.petitchef.petitchef.R;
 import com.petitchef.petitchef.objects.Recipe;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Transformation;
 
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.regex.Matcher;
 
 /**
  * Created by nicolasgirardot on 1/20/17.
@@ -64,7 +56,7 @@ public class RecipeListViewAdapter extends BaseAdapter {
                 .into((ImageView) rowView.findViewById(R.id.recipe_elem_img), new Callback() {
                     @Override
                     public void onSuccess() {
-                        placeTriangle(rowView.findViewById(R.id.recipe_elem_img),rowView.findViewById(R.id.test_view), position % 2);
+                        //placeTriangle(rowView.findViewById(R.id.recipe_elem_img),rowView.findViewById(R.id.test_view), position % 2);
 
                     }
 
@@ -89,8 +81,6 @@ public class RecipeListViewAdapter extends BaseAdapter {
                     triangleView.setPivotY(mImageView.getHeight());
                 }
                 float tanb = (float)mImageView.getHeight() / (float)mImageView.getWidth();
-
-                Log.d("tan", "Width = " + mImageView.getWidth() + " ::: Height = " + mImageView.getHeight() + "  tan = " + tanb);
 
                 triangleView.setRotation((float)Math.toDegrees(Math.atan(tanb)));
                 ViewGroup.LayoutParams params =  triangleView.getLayoutParams();

@@ -1,24 +1,22 @@
 package com.petitchef.petitchef.views.adapters;
 
 import android.content.Context;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.BaseAdapter;
-
 
 import com.petitchef.petitchef.R;
 import com.petitchef.petitchef.objects.ListItem;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by nicolasgirardot on 1/27/17.
  */
 
-public class ListListViewAdapter extends BaseAdapter {
+public class ListListViewAdapter extends BaseAdapter implements Serializable {
 
     private ArrayList<ListItem> items;
     private Context mContext;

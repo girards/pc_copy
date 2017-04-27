@@ -1,6 +1,8 @@
 package com.petitchef.petitchef.network;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.android.volley.Request;
@@ -9,6 +11,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 import com.petitchef.petitchef.App;
+import com.petitchef.petitchef.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,14 +25,17 @@ import java.util.Map;
 public class APIManager {
     private static final String TAG = "APIManager";
     private static APIManager instance = null;
-    private String baseUrl = "http://petitchef.me:9090/";
+    private static String baseUrl = "http://petitchef.me:9090/";
     private RequestQueue requestQueue;
     private static Context context;
+    private static String APIToken;
 
     private APIManager(Context context) {
         APIManager.context = context;
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
         if (requestQueue == null)
             requestQueue = Volley.newRequestQueue(context);
+        APIToken = sharedPref.getString(context.getResources().getString(R.string.token_shared_string), null);
     }
 
     public static APIManager getInstance() {
@@ -40,7 +46,6 @@ public class APIManager {
 
     public void login(String username, String password, final APIListener<Boolean> handler) {
         String finalRequest = baseUrl + "login" + username + "/" + password;
-
         mJsonObjectRequest jsObjRequest = new mJsonObjectRequest(Request.Method.GET, finalRequest, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {

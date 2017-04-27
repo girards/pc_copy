@@ -39,25 +39,16 @@ public class StockFragment extends Fragment {
 
 
         final ArrayList<StockItem> stocks = new ArrayList<>();
-        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
-        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
-        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
-        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
-        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
-        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
-        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
-        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
-        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
-        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
-        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
-        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
-        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
-        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
-        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
-        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
-        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
-        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
-        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "FOOOD", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "Poivron", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "Epinard", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "Jambon", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "Thé", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "Poisson", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "Pistaches", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "Amandes", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "Noix de Cajoux", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "Boeuf", "x4"));
+        stocks.add(new StockItem("https://b.thumbs.redditmedia.com/dmijpEe8F-no-NmejFwooRAYe3qG0hiquWgtOEdew3E.jpg", "Travers de Porc", "x4"));
 
 
         StockListViewAdapter adapter = new StockListViewAdapter(this.getContext(), stocks);
